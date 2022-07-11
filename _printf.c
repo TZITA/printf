@@ -85,5 +85,3 @@ char *convert(unsigned int num, int base)
 	} while (num != 0);
 	return (p);
 }
-
-#endif
