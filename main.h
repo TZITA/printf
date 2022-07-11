@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdio.h>
@@ -89,5 +90,12 @@ char *convert(unsigned int num, int base)
 	} while (num != 0);
 	return (p);
 }
+=======
+#ifndef HEADER_FILE
+#define HEADER_FILE
+
+int _putchar(char c);
+int _printf(const char *format, ...);
+>>>>>>> 68726dd305eb3db021700c15a3a7df13cb19194d
 
 #endif
