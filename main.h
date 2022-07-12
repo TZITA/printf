@@ -63,6 +63,5 @@ void put_base(char *str);
 char *_memcpy(char *dest, char *src, unsigned int n);
 int pr_unsig_num(unsigned int);
 char *print_char (modifier_t *modif, va_list list);
-int print_rot13(va_list list, flags_t *f);
 
 #endif
