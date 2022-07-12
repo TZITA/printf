@@ -25,5 +25,18 @@ int pr_char(va_list);
 int pr_str(va_list);
 int pr_percent(va_list);
 int pr_int(va_list);
+int pr_num(va_list);
+int pr_bi(va_list);
+int pr_rev(va_list);
+int rot13(va_list);
+int unsig_int(va_list);
+int pr_oct(va_list list);
+int pr_he_x(va_list list);
+int pr_he_X(va_list list);
+unsigned int b_len(unsigned int, int);
+char *rev_str(char *);
+void put_base(char *str);
+char *_memcpy(char *dest, char *src, unsigned int n);
+int pr_unsig_num(unsigned int);
 
 #endif
