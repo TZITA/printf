@@ -15,7 +15,7 @@ char *rev_str(char *s)
 	int t;
 	char *dest;
 
-	for (len = 0 ; s[len] != '\0'; len++)
+	for (len = 0; s[len] != '\0'; len++)
 	{}
 	dest = malloc(sizeof(char) * len + 1);
 	if (dest == NULL)
@@ -60,7 +60,7 @@ unsigned int b_len(unsigned int num, int base)
 {
 	unsigned int i;
 
-	for (i = ; num > 0; i++)
+	for (i = 0; num > 0; i++)
 	{
 		num = num / base;
 	}
