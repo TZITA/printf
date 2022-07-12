@@ -1,7 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdarg.h>
-#include <stdlib.h>
 
 /**
  * _printf - prints and formats data
@@ -12,76 +9,25 @@
 
 int _printf(const char *format, ...)
 {
-	const char *toprint;
-	int i;
-	char *s;
+	int pr_ch;
+	conv func_ls[] = {
+		{"c", pr_char},
+		{"s", pr_str},
+		{"%", pr_percent},
+		{"d", pr_int},
+		{"i", pr_int},
+		{NULL, NULL}
+	};
+
 	va_list arg;
 
-	va_start(arg, format);
-
-	for (toprint = format; *toprint; toprint++)
+	if (format == NULL)
 	{
-		if (*toprint != '%')
-		{
-			putchar(*toprint);
-			continue;
-		}
-		switch (*++toprint)
-		{
-			case 'c':
-				i = va_arg(arg, int);
-				putchar(i);
-				break;
-			case 'd':
-				i = va_arg(arg, int);
-				if (i < 0)
-				{
-					i = -i;
-					putchar('-');
-				}
-				fputs((convert(i, 10)), stdout);
-				break;
-			case 'i':
-				i = va_arg(arg, int);
-				if (i < 0)
-				{
-					i = -i;
-					putchar('-');
-				}
-				fputs((convert(i, 10)), stdout);
-				break;
-			case 's':
-				for (s = va_arg(arg, char *); *s; s++)
-					putchar(*s);
-				break;
-			default:
-				putchar(*toprint);
-				break;
-		}
-		va_end(arg);
+		return (-1);
 	}
-	return (0);
-}
 
-/**
- * convert - converts integer to the specified base
- * @num: number
- * @base: base
- *
- * Return: Pointer.
- */
-
-char *convert(unsigned int num, int base)
-{
-	char rep[] = "0123456789ABCDEF";
-	static char tmp[50];
-	char *p;
-
-	p = &tmp[49];
-	*p = '\0';
-	do {
-		*--p = rep[num % base];
-		num /= base;
-	} while (num != 0);
-	return (p);
+	va_start(arg, format);
+	pr_ch = format_c(format, func_ls, arg);
+	va_end(arg);
+	return (pr_ch);
 }
