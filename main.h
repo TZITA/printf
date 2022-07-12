@@ -4,6 +4,30 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <stdio.h>
+#include <stddef.h>
+
+#define BUFFER_SIZE 1024
+
+/**
+ * struct modifier - Entry Point
+ * modifier fields
+ * @flag: flag fields
+ * @precision: precision 
+ * @length: length
+ * @width: width
+ * @specifier: specifier
+ */
+
+typedef struct modifier
+{
+	char *flags;
+	int precision;
+	char *length;
+	int width;
+	char specifier;
+} modifier_t;
+
 
 /**
  * struct convert - structure for functions and their rep
