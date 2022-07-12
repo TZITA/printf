@@ -13,7 +13,7 @@ int print_rot13(va_list list, flags_t *f)
 	int Cntr1, Cntr2;
 	char rot13[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char ROT13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
-	char *p = va_arg(1, char *);
+	char *p = va_arg(list, char *);
 
 	(void)f;
 
