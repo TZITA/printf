@@ -62,5 +62,6 @@ char *rev_str(char *);
 void put_base(char *str);
 char *_memcpy(char *dest, char *src, unsigned int n);
 int pr_unsig_num(unsigned int);
+char *print_char (modifier_t *modif, va_list list);
 
 #endif
